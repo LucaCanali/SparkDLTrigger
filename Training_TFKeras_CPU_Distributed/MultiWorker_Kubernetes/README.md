@@ -13,7 +13,7 @@ tf.data is used to read the data in TFRecord format.
   export S3_ENDPOINT="...." (example "s3.cern.ch")
   ```
 - Edit the configurable variables in `Train_Inclusive_Classifier.py`
-  - notably: "Data paths" variables
+  - notably: "Data paths" variables, as `train_data = "s3://datasets/tf/train/"`
 
 - Run distributed training on Kubernets with TF-Spawner as in this example:
   - `python launch.py -w 32 Train_Inclusive_Classifier.py`
