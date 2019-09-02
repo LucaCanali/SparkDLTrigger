@@ -9,8 +9,8 @@ tf.data is used to read the data in TFRecord format.
 - Copy the data, for example on a S3-compatible filesystem and set the required variables:
   ```
   export AWS_ACCESS_KEY_ID="...."
-  export AWS_ACCESS_KEY_ID="...."
-  export AWS_ACCESS_KEY_ID="...." (example "s3.cern.ch")
+  export AWS_SECRET_ACCESS_KEY="...."
+  export S3_ENDPOINT="...." (example "s3.cern.ch")
   ```
 - Edit the configurable variables in `Train_Inclusive_Classifier.py`
   - notably: "Data paths" variables
