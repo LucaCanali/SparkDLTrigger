@@ -2,7 +2,7 @@
 # This Python code is the core of the distributed training with 
 # tf.keras with tf.distribute for the Inclusive Classifier model
 # 
-# tested with tf 2.0.0-rc0
+# tested with TensorFlow 2.0.0-rc0
 #########
 
 ########################
@@ -20,7 +20,7 @@ model_output_path="./"         # output dir for saving the trained model
 
 # tunables
 batch_size = 128 * number_workers
-test_batch_size = 10240
+validation_batch_size = 10240
 
 # tunable
 num_epochs = 12
@@ -79,7 +79,8 @@ files_test_dataset = tf.data.Dataset.list_files(PATH + "testUndersampled.tfrecor
 files_train_dataset = tf.data.Dataset.list_files(PATH + "trainUndersampled.tfrecord/part-r*", seed=4242)
 
 # tunable
-num_parallel_reads=16
+num_parallel_reads=tf.data.experimental.AUTOTUNE # TF2.0
+# num_parallel_reads=8
 
 test_dataset = files_test_dataset.prefetch(buffer_size=tf.data.experimental.AUTOTUNE).interleave(
     tf.data.TFRecordDataset, 
@@ -105,20 +106,15 @@ def decode(serialized_example):
 parsed_test_dataset=test_dataset.map(decode, num_parallel_calls=tf.data.experimental.AUTOTUNE)
 parsed_train_dataset=train_dataset.map(decode, num_parallel_calls=tf.data.experimental.AUTOTUNE)
 
-
-train=parsed_train_dataset.batch(batch_size)
-train=train.prefetch(buffer_size=tf.data.experimental.AUTOTUNE)
-train=train.repeat()
+train=parsed_train_dataset.repeat().batch(batch_size)
 
 num_train_samples=3426083   # there are 3426083 samples in the training dataset
 steps_per_epoch=num_train_samples//batch_size
 
-test=parsed_test_dataset.batch(test_batch_size)
-test=test.prefetch(buffer_size=tf.data.experimental.AUTOTUNE)
-test=test.repeat()
+test=parsed_test_dataset.repeat().batch(validation_batch_size)
 
 num_test_samples=856090 # there are 856090 samples in the test dataset
-validation_steps=num_test_samples//test_batch_size  
+validation_steps=num_test_samples//validation_batch_size  
 
 
 callbacks = [ tf.keras.callbacks.TensorBoard(log_dir='./logs') ]
