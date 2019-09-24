@@ -1,13 +1,13 @@
 # SparkDLTrigger
 
-This repository contains the code and notebooks accompanying the blog article
-[Machine Learning Pipelines for High Energy Physics Using Apache Spark with BigDL and Analytics Zoo](https://db-blog.web.cern.ch/blog/luca-canali/machine-learning-pipelines-high-energy-physics-using-apache-spark-bigdl).    
+This repository contains the code and notebooks accompanying the article [Machine Learning Pipelines with Modern Big DataTools for High Energy Physics](https://arxiv.org/abs/1909.10389)
+and the blog entry [Machine Learning Pipelines for High Energy Physics Using Apache Spark with BigDL and Analytics Zoo](https://db-blog.web.cern.ch/blog/luca-canali/machine-learning-pipelines-high-energy-physics-using-apache-spark-bigdl).    
 
 Principal author of the notebooks: Matteo.Migliorini@cern.ch  
 Further work and contacts: Luca.Canali@cern.ch; Riccardo.Castellotti@cern.ch; Matteo.Migliorini@cern.ch    
-Raw data and neural network models: [T.Q. Nguyen *et al.*](https://arxiv.org/abs/1807.00083)   
+Original research, raw data and neural network models by: [T.Q. Nguyen *et al.*, Comput Softw Big Sci (2019) 3: 12](https://link.springer.com/epdf/10.1007/s41781-019-0028-1?author_access_token=eTrqfrCuFIP2vF4nDLnFfPe4RwlQNchNByi7wbcMAY7NPT1w8XxcX1ECT83E92HWx9dJzh9T9_y5Vfi9oc80ZXe7hp7PAj21GjdEF2hlNWXYAkFiNn--k5gFtNRj6avm0UukUt9M9hAH_j4UR7eR-g%3D%3D)   
 Acknowledgements: Viktor Khristenko, Thong Nguyen, Maurizio Pierini, Maria Girone, Marco Zanetti, 
-members of the Hadoop and Spark service at CERN,
+members of the Hadoop and Spark service at CERN, CMS Bigdata project,
 Intel team for BigDL and Analytics Zoo consultancy: Jiao (Jennie) Wang and Sajan Govindan.
   
 ## Physics use case
@@ -22,7 +22,7 @@ using tools from the Big Data ecosystem, notably Apache Spark and BigDL/Analytic
 ![Physics use case for the particle classifier](Docs/Physics_use_case.png)
   
   
-## Data pipelines for deeplearning
+## Data pipelines for deep learning
 Data pipelines are of paramount importance to make machine learning projects successful, by integrating multiple components and APIs used for data processing across the entire data chain. A good data pipeline implementation can accelerate and improve the productivity of the work around the core machine learning tasks.
 The four steps of the pipeline we built are:
 
