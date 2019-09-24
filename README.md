@@ -16,7 +16,7 @@ of event topologies of interest.
 A particle classifier built with neural networks can be used as event filter,
 improving state of the art in accuracy.  
 This work reproduces the findings of the paper
-[Topology classification with deep learning to improve real-time event selection at the LHC](https://arxiv.org/abs/1807.00083)
+[Topology classification with deep learning to improve real-time event selection at the LHC](https://link.springer.com/epdf/10.1007/s41781-019-0028-1?author_access_token=eTrqfrCuFIP2vF4nDLnFfPe4RwlQNchNByi7wbcMAY7NPT1w8XxcX1ECT83E92HWx9dJzh9T9_y5Vfi9oc80ZXe7hp7PAj21GjdEF2hlNWXYAkFiNn--k5gFtNRj6avm0UukUt9M9hAH_j4UR7eR-g%3D%3D)
 using tools from the Big Data ecosystem, notably Apache Spark and BigDL/Analytics Zoo.
 
 ![Physics use case for the particle classifier](Docs/Physics_use_case.png)
