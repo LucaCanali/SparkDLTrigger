@@ -75,11 +75,13 @@ Only a sample of the data is provided currently, The full datataset occupies 943
 - 6.4 GB [dataIngestion_full_13TeV_SAMPLE](http://sparkdltrigger.web.cern.ch/sparkdltrigger/dataIngestion_full_13TeV_SAMPLE)
 
 ## How to bulk download using wget
-This technique can be used to download full diractories (tested on Linux):
+This technique can be used to download full data directories (tested on Linux):
 ```
 DATASET_NAME="testUndersampled_HLF_features.parquet"
+#DATASET_NAME="testUndersampled.parquet"
 wget -r -np -R "index.html*" -e robots=off http://sparkdltrigger.web.cern.ch/sparkdltrigger/$DATASET_NAME
 
 DATASET_NAME="trainUndersampled_HLF_features.parquet"
+#DATASET_NAME="trainUndersampled.parquet"
 wget -r -np -R "index.html*" -e robots=off http://sparkdltrigger.web.cern.ch/sparkdltrigger/$DATASET_NAME
 ```
