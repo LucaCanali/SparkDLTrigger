@@ -1,6 +1,7 @@
 # Data
 
-This directory contains links to download the datasets used by this project, with a short description.  
+This directory contains links to download the datasets used by
+["Machine Learning Pipelines with Modern Big Data Tools for High Energy Physics"](https://arxiv.org/abs/1909.10389), with a short description.  
 For the largest datasets (raw data and the output of first step of pre-processing) we have currently uploaded
 only representative samples. The full dataset is expected to be made available using CERN Open Data at a later date.
 Datasets are made available under the terms of the CC0 waiver.   
