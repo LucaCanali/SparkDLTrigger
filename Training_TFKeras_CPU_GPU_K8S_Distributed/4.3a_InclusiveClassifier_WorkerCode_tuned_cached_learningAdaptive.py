@@ -32,13 +32,10 @@ num_epochs = 6
 import tensorflow as tf
 from tensorflow.keras.optimizers import Adam, Adadelta
 from tensorflow.keras import Sequential, Input, Model
-from tensorflow.keras.callbacks import Callback
 from tensorflow.keras.layers import Masking, Dense, Activation, GRU, Dropout, concatenate,LSTM
-import os
-import json
 from time import time
 
-# TF_CONFIG is the envirnment variable used to configure tf.distribute
+# TF_CONFIG is the environment variable used to configure tf.distribute
 # each worker will have a different number, an index entry in the nodes_endpoint list
 # node 0 is master, by default
 strategy = tf.distribute.experimental.MultiWorkerMirroredStrategy()
@@ -136,13 +133,9 @@ print("Training finished, now saving the model in h5 format to: " + model_full_p
 model.save(model_full_path, save_format="h5")
 print("model saved.\n")
 
-# TensorFlow 2.0
 #print("..saving the model in tf format (TF 2.0) to: " + model_full_path)
 #tf.keras.models.save_model(model, "/tmp/mymodel"+ str(worker_number) + ".tf", save_format='tf')
 #print("model saved.\n")
-
-import time
-time.sleep(1000)
 
 exit()
 
